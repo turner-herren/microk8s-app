@@ -1,11 +1,15 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import kotlin.collections.*
 
 plugins {
     id("org.springframework.boot") version "3.0.1"
     id("io.spring.dependency-management") version "1.1.0"
+    id("com.google.cloud.tools.jib") version "3.3.1"
     kotlin("jvm") version "1.7.22"
     kotlin("plugin.spring") version "1.7.22"
 }
+
+
 
 group = "kr.co.herrencorp"
 version = "0.0.1-SNAPSHOT"
@@ -42,4 +46,24 @@ tasks.withType<KotlinCompile> {
 
 tasks.withType<Test> {
     useJUnitPlatform()
+}
+
+
+jib {
+    from {
+        image = "eclipse-temurin:17-jre"
+        platforms {
+            platform {
+                architecture = "arm64"
+                os = "linux"
+            }
+        }
+    }
+    to {
+        image = "microk8s/app"
+        tags = setOf("latest")
+    }
+    container {
+        jvmFlags = listOf("-Xms128m", "-Xmx128m")
+    }
 }
