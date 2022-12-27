@@ -1,0 +1,29 @@
+apiVersion: apps/v1 # for versions before 1.8.0 use apps/v1beta1
+kind: Deployment
+metadata:
+  name: microk8s-app-deployment
+  labels:
+    app: microk8s-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: microk8s-app
+  template:
+    metadata:
+      labels:
+        app: microk8s-app
+    spec:
+      containers:
+        - name: microk8s-app
+          image: 335145105741.dkr.ecr.ap-northeast-2.amazonaws.com/microk8s-app:1.0
+          ports:
+            - containerPort: 10000
+          imagePullPolicy: Always
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "200m"
+            limits:
+              memory: "1Gi"
+              cpu: "500m"

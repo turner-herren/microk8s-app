@@ -60,7 +60,7 @@ jib {
         }
     }
     to {
-        image = "microk8s/app"
+        image = "335145105741.dkr.ecr.ap-northeast-2.amazonaws.com/microk8s-app"
         tags = setOf("latest")
     }
     container {
