@@ -15,6 +15,6 @@ class AppController {
 
     @GetMapping("/alive")
     fun alive(): ResponseEntity<String> {
-        return ResponseEntity.ok("OK")
+        return ResponseEntity.ok("OK!")
     }
 }
