@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: DaemonSet
 metadata:
   name: microk8s-app-dev-daemonset
-  namespace: microk8s-app
+  namespace: microk8s-app-prod
   labels:
     app: microk8s-app
 spec:
