@@ -17,7 +17,7 @@ spec:
       hostNetwork: true
       containers:
         - name: microk8s-app
-          image: 335145105741.dkr.ecr.ap-northeast-2.amazonaws.com/microk8s-app:1.0
+          image: 335145105741.dkr.ecr.ap-northeast-2.amazonaws.com/microk8s-app:latest
           ports:
             - containerPort: 10000
           imagePullPolicy: Always
