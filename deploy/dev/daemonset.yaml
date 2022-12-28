@@ -29,7 +29,7 @@ spec:
             periodSeconds: 100
             failureThreshold: 3
       imagePullSecrets:
-        - name: 3351-ecr-registry
+        - name: default-token-b79b6
       terminationGracePeriodSeconds: 1800
       dnsPolicy: Default
       dnsConfig:
