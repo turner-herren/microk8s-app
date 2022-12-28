@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: microk8s-app-dev-daemonset
+  namespace: microk8s-app
+  labels:
+    app: microk8s-app
+spec:
+  selector:
+    matchLabels:
+      app: microk8s-app
+  template:
+    metadata:
+      labels:
+        app: microk8s-app
+    spec:
+      hostNetwork: true
+      containers:
+        - name: mgp-worker
+          image: 335145105741.dkr.ecr.ap-northeast-2.amazonaws.com/microk8s-app:1.0
+          ports:
+            - containerPort: 10000
+          imagePullPolicy: Always
+          livenessProbe:
+            httpGet:
+              port: 10000
+              path: /alive
+            initialDelaySeconds: 20
+            periodSeconds: 100
+            failureThreshold: 3
+      imagePullSecrets:
+        - name: 3351-ecr-registry
+      terminationGracePeriodSeconds: 1800
+      dnsPolicy: Default
+      dnsConfig:
+        nameservers:
+          - 8.8.8.8
+        searches:
+          - 8.8.4.4
+  updateStrategy:
+    rollingUpdate:
+      maxUnavailable: 100%
+    type: RollingUpdate

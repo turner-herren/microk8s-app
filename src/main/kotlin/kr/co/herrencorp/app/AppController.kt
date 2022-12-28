@@ -12,4 +12,9 @@ class AppController {
     fun get(): ResponseEntity<String> {
         return ResponseEntity.ok(UUID.randomUUID().toString())
     }
+
+    @GetMapping("/alive")
+    fun alive(): ResponseEntity<String> {
+        return ResponseEntity.ok("OK")
+    }
 }
