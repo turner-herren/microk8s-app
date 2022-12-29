@@ -5,7 +5,7 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - nodePort: 10000
+    - nodePort: 30000
       port: 10000
       targetPort: 10000
       protocol: TCP
