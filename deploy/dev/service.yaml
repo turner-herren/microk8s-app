@@ -8,6 +8,5 @@ spec:
     - nodePort: 30000
       port: 10000
       targetPort: 10000
-      protocol: TCP
   selector:
     app: microk8s-app
