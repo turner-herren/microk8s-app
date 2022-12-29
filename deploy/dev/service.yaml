@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: microk8s-app-service
 spec:
-  type: ClusterIP
+  type: NodePort
   ports:
     - nodePort: 30000
       port: 10000
