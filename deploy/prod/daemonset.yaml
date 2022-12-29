@@ -20,6 +20,8 @@ spec:
           image: 335145105741.dkr.ecr.ap-northeast-2.amazonaws.com/microk8s-app:latest
           ports:
             - containerPort: 10000
+              hostPort: 10000
+              protocol: TCP
           imagePullPolicy: Always
           livenessProbe:
             httpGet:
