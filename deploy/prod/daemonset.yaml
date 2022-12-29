@@ -29,7 +29,7 @@ spec:
             periodSeconds: 100
             failureThreshold: 3
       imagePullSecrets:
-        - name: default-token-9bjcg
+        - name: regcred
       terminationGracePeriodSeconds: 1800
       dnsPolicy: Default
       dnsConfig:
