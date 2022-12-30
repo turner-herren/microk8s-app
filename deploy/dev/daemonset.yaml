@@ -24,7 +24,7 @@ spec:
           livenessProbe:
             httpGet:
               port: 10000
-              path: /alive/server
+              path: /alive
             initialDelaySeconds: 20
             periodSeconds: 100
             failureThreshold: 3

@@ -17,14 +17,14 @@ spec:
       hostNetwork: true
       containers:
         - name: microk8s-app
-          image: 335145105741.dkr.ecr.ap-northeast-2.amazonaws.com/microk8s-app:latest
+          image: 335145105741.dkr.ecr.ap-northeast-2.amazonaws.com/microk8s-app:v1.3.
           ports:
             - containerPort: 10000
           imagePullPolicy: Always
           livenessProbe:
             httpGet:
               port: 10000
-              path: /alive/server
+              path: /alive
             initialDelaySeconds: 20
             periodSeconds: 100
             failureThreshold: 3
