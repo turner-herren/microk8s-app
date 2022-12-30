@@ -17,7 +17,7 @@ spec:
       hostNetwork: true
       containers:
         - name: microk8s-app
-          image: 335145105741.dkr.ecr.ap-northeast-2.amazonaws.com/microk8s-app:v1.3.
+          image: 335145105741.dkr.ecr.ap-northeast-2.amazonaws.com/microk8s-app:v1.3.2
           ports:
             - containerPort: 10000
           imagePullPolicy: Always
@@ -35,10 +35,10 @@ spec:
           requiredDuringSchedulingIgnoredDuringExecution:
             nodeSelectorTerms:
               - matchExpressions:
-                  - key: kubernetes.io/hostname
+                  - key: kubernetes.io/microk8s-controlplane
                     operator: NotIn
                     values:
-                      - brandaz-k8s-master
+                      - microk8s-controlplane
       terminationGracePeriodSeconds: 1800
       dnsPolicy: Default
       dnsConfig:
