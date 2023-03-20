@@ -39,6 +39,10 @@ spec:
                     operator: NotIn
                     values:
                       - microk8s-controlplane
+                  - key: kubernetes.io/hostname
+                    operator: In
+                    values:
+                      - worker.herren.co.kr
       terminationGracePeriodSeconds: 1800
       dnsPolicy: Default
       dnsConfig:
