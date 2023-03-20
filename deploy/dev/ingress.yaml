@@ -2,12 +2,15 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: my-ingress
+  namespace: microk8s-app-dev
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
     - host: ec2-43-201-106-95.ap-northeast-2.compute.amazonaws.com
       http:
         paths:
-          - path: /{hostname}/
+          - path: /<brandaz-k8s-worker>/*
             pathType: Prefix
             backend:
               service:
