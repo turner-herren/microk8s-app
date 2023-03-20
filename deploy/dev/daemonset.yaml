@@ -35,10 +35,6 @@ spec:
           requiredDuringSchedulingIgnoredDuringExecution:
             nodeSelectorTerms:
               - matchExpressions:
-                  - key: node.kubernetes.io/microk8s-controlplane
-                    operator: NotIn
-                    values:
-                      - microk8s-controlplane
                   - key: kubernetes.io/hostname
                     operator: In
                     values:
