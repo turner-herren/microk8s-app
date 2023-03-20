@@ -4,7 +4,7 @@ metadata:
   name: my-ingress
 spec:
   rules:
-    - host: ec2-43-201-106-95.ap-northeast-2.compute.amazonaws.com:10000
+    - host: ec2-43-201-106-95.ap-northeast-2.compute.amazonaws.com
       http:
         paths:
           - path: /{hostname}/
@@ -13,4 +13,4 @@ spec:
               service:
                 name: microk8s-app-service
                 port:
-                  name: http
+                  number: 10000
