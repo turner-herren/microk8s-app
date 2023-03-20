@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-ingress
+spec:
+  rules:
+    - host: brandaz-k8s-worker
+      http:
+        paths:
+          - path: /{hostname}/
+            pathType: Prefix
+            backend:
+              service:
+                name: microk8s-app-service
+                port:
+                  name: http
