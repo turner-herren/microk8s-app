@@ -10,7 +10,7 @@ spec:
     - host: ingress.test.corwq
       http:
         paths:
-          - path: /<brandaz-k8s-worker>/*
+          - path: /<worker.herren.co.kr>/*
             pathType: Prefix
             backend:
               service:
