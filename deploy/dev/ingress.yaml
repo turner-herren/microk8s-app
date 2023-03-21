@@ -10,7 +10,7 @@ spec:
     - host: ingress.test.corwq
       http:
         paths:
-          - path: /1/*
+          - path: /
             pathType: Prefix
             backend:
               service:
