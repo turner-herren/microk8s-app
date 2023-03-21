@@ -7,7 +7,7 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: ingress.test.corwq
+  - host: 1.ingress.herren.co.kr
     http:
       paths:
       - path: /
@@ -17,3 +17,14 @@ spec:
             name: microk8s-app-service
             port:
               number: 10000
+
+  - host: 2.ingress.herren.co.kr
+    http:
+      paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: microk8s-app-service
+              port:
+                number: 10000
