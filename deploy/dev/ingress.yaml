@@ -16,4 +16,4 @@ spec:
               service:
                 name: microk8s-app-service
                 port:
-                  number: 32000
+                  number: 10000

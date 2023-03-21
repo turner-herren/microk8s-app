@@ -3,11 +3,10 @@ kind: Service
 metadata:
   name: microk8s-app-service
 spec:
-  type: NodePort
   ports:
-    - nodePort: 32000
-      port: 10000
-      targetPort: 10000
-      protocol: TCP
+  - name: http
+    port: 10000
+    targetPort: 10000
+    protocol: TCP
   selector:
     app: microk8s-app
