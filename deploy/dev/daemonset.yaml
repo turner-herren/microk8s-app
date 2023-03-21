@@ -50,3 +50,4 @@ spec:
     rollingUpdate:
       maxUnavailable: 100%
     type: RollingUpdate
+
